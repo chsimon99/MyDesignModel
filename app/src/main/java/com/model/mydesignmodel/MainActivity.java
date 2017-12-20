@@ -7,6 +7,7 @@ import com.model.mydesignmodel.decorator.Person;
 import com.model.mydesignmodel.decorator.finery.Sneakers;
 import com.model.mydesignmodel.decorator.finery.Suit;
 import com.model.mydesignmodel.decorator.finery.TShirt;
+import com.model.mydesignmodel.proxy.Proxy;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         tShirt.decorate(sneakers);
         suit.decorate(tShirt);
         suit.show();
+
+        /**
+         * 代理模式
+         */
+        Proxy proxy = new Proxy();
+        proxy.request();
 
 
 
