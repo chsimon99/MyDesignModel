@@ -15,6 +15,9 @@ import com.model.mydesignmodel.facade.Facade;
 import com.model.mydesignmodel.factoryMethod.IFactory;
 import com.model.mydesignmodel.factoryMethod.LeiFeng;
 import com.model.mydesignmodel.factoryMethod.VolunteerFactory;
+import com.model.mydesignmodel.observer.ConcreteObserverA;
+import com.model.mydesignmodel.observer.ConcreteObserverB;
+import com.model.mydesignmodel.observer.Observable;
 import com.model.mydesignmodel.proxy.Proxy;
 
 public class MainActivity extends AppCompatActivity {
@@ -71,5 +74,16 @@ public class MainActivity extends AppCompatActivity {
         productA.show();
         Product productB = director.createBuilder(new ConcreteBuilderB(), "方法B");
         productB.show();
+
+        /**
+         * 观察者模式
+         */
+        Observable observable = new Observable();
+        observable.addObserver(new ConcreteObserverA());
+        observable.addObserver(new ConcreteObserverB());
+        observable.changed();
+
+
+
     }
 }
